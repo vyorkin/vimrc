@@ -1,4 +1,4 @@
 if has('timers')
-  " blink 2 times with 50ms interval
-  noremap <expr> <plug>(slash-after) slash#blink(2, 50)
+  " Blink several times with a given interval
+  no <expr> <plug>(slash-after) slash#blink(3, 20)
 endif

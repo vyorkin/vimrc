@@ -1,6 +1,9 @@
-let airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+" Automatically populate the g:airline_symbols
+" dictionary with the powerline symbols
+let g:airline_powerline_fonts = 1
+
+" Automatically displays all buffers when there's only one tab open
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme="seagull"
+
+" Set theme
+let g:airline_theme="badwolf"
