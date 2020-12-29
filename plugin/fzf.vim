@@ -16,7 +16,7 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 let g:fzf_tags_command = 'ctags -R'
 
 " Default layout
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.4 } }
 
 " Preview window on the upper side of the window with 40% height,
 " hidden by default, ctrl-/ to toggle
