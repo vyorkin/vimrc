@@ -86,10 +86,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'mg979/vim-visual-multi'
 " Plugin to toggle, display and navigate marks
   Plug 'kshenoy/vim-signature'
-" Enhancing in-buffer search experience
-" - Automatically clears search highlight when cursor is moved
-" - Improved star-search (visual-mode, highlighting without moving)
-  Plug 'junegunn/vim-slash'
 " Window local searching
   Plug 'mox-mox/vim-localsearch'
 " An ack/ag/pt/rg powered code search and view tool
@@ -230,7 +226,13 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
   Plug 'neovimhaskell/haskell-vim'
 
 " Idris
+"
   Plug 'idris-hackers/idris-vim'
+
+" PureScript
+
+" Syntax highlighting and indentation for PureScript
+  Plug 'purescript-contrib/purescript-vim'
 
 " Nix
 
@@ -271,9 +273,6 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Appearance
 """""""""""""""""""""""""""""""""""""""""""""""""
-
-" Displays the indention levels with thin vertical lines
-  Plug 'Yggdroot/indentLine'
 
 " Adds file type icons to Vim plugins such as: NERDTree, vim-airline,
 " CtrlP, unite, Denite, lightline, vim-startify and many more
