@@ -74,24 +74,32 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 " Bundle of fzf-based commands and mappings
   Plug 'junegunn/fzf.vim'
-
+" Use nvim/vim's builtin terminal in the floating/popup window
+  Plug 'voldikss/vim-floaterm'
+" Fzf support for vim-floaterm
+  Plug 'voldikss/fzf-floaterm'
+" shows keybindings in popup
+  Plug 'liuchengxu/vim-which-key'
+" Make Ranger running in a floating window to communicate with Neovim via RPC
+  Plug 'kevinhwang91/rnvimr'
+" Multiple cursors plugin for vim/neovim
+  Plug 'mg979/vim-visual-multi'
 " Plugin to toggle, display and navigate marks
   Plug 'kshenoy/vim-signature'
 " Enhancing in-buffer search experience
 " - Automatically clears search highlight when cursor is moved
 " - Improved star-search (visual-mode, highlighting without moving)
   Plug 'junegunn/vim-slash'
-
 " Window local searching
   Plug 'mox-mox/vim-localsearch'
-
-" File system explorer
-" Plug 'scrooloose/nerdtree'
-" Extra syntax and highlight for nerdtree files
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
 " An ack/ag/pt/rg powered code search and view tool
   Plug 'dyng/ctrlsf.vim'
+" Intelligently reopen files at your last edit position
+  Plug 'dietsche/vim-lastplace'
+" File system explorer
+  Plug 'scrooloose/nerdtree'
+" Extra syntax and highlight for nerdtree files
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax checking
@@ -148,9 +156,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Tmux
 """""""""""""""""""""""""""""""""""""""""""""""""
 
-" Adds syntax highlighting for .tmux.conf
-" and a few useful commands and keybindings
-  Plug 'tmux-plugins/vim-tmux'
+" Seamless navigation between tmux panes and vim splits
+  Plug 'christoomey/vim-tmux-navigator'
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Completion
@@ -214,6 +221,17 @@ call plug#begin('~/.config/nvim/plugged')
 " Static support for Leiningen and Boot
   Plug 'tpope/vim-salve'
 
+" Cxx
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+" Haskell
+
+" Syntax Highlighting and Indentation for Haskell and Cabal
+  Plug 'neovimhaskell/haskell-vim'
+
+" Idris
+  Plug 'idris-hackers/idris-vim'
+
 " Nix
 
 " Support for writing Nix expressions:
@@ -253,6 +271,9 @@ call plug#begin('~/.config/nvim/plugged')
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Appearance
 """""""""""""""""""""""""""""""""""""""""""""""""
+
+" Displays the indention levels with thin vertical lines
+  Plug 'Yggdroot/indentLine'
 
 " Adds file type icons to Vim plugins such as: NERDTree, vim-airline,
 " CtrlP, unite, Denite, lightline, vim-startify and many more

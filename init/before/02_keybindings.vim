@@ -80,6 +80,12 @@ nn <silent> <leader>s <C-w>s<CR>
 nn <silent> <leader>\| <C-w>v
 nn <silent> <leader>_ <C-w>s
 
+" Resize splits easier
+nn <silent> <C-M-j> :resize -2<CR>
+nn <silent> <C-M-k> :resize +2<CR>
+nn <silent> <C-M-h> :vertical resize -2<CR>
+nn <silent> <C-M-l> :vertical resize +2<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Yanking
 """""""""""""""""""""""""""""""""""""""""""""""""

@@ -34,10 +34,6 @@ set updatetime=300
 " - Don't pass messages to |ins-completion-menu
 set shortmess=catIO
 
-" Always show the signcolumn, otherwise it
-" would shift the text each time diagnostics appear/become resolved
-set signcolumn=yes
-
 " Better formatting
 augroup formatting
   au!
@@ -54,8 +50,13 @@ set matchtime=1
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+" Always show the signcolumn, otherwise it
+" would shift the text each time diagnostics appear/become resolved
+set signcolumn=yes
 " Enable 24-bit colors
 set termguicolors
+" Make popup menu smaller
+set pumheight=10
 
 if has('gui_running')
   set guifont=JetBrains\ Mono\ 13

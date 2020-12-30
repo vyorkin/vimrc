@@ -1,3 +1,7 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Settings
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Disables display of the 'Bookmarks' label and 'Press ? for help' text
 let NERDTreeMinimalUI = 1
 " Sets the window size when the NERDTree is opened
@@ -9,15 +13,21 @@ let NERDTreeMinimalMenu = 1
 " Show hidden files by default
 let NERDTreeShowHidden = 1
 
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Keybindings
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
 nn <leader>q :NERDTreeToggle<CR>
-nn <leader>a :NERDTreeFocus<CR>
 nn <leader>r :NERDTreeFind<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Auto commands
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
 augroup nerdtree
   " If previous buffer was NERDTree, go back to it
-  au BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
+  " au BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
   " Exit Vim if NERDTree is the only window left.
   au BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
       \ quit | endif
 augroup END
-

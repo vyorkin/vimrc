@@ -1,4 +1,49 @@
 """""""""""""""""""""""""""""""""""""""""""""""""
+" Settings
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Coc will install the missing extensions after coc.nvim service started
+let g:coc_global_extensions = [
+  \ 'coc-marketplace',
+  \ 'coc-git',
+  \ 'coc-gitignore',
+  \ 'coc-sql',
+  \ 'coc-snippets',
+  \ 'coc-prettier',
+  \ 'coc-emmet',
+  \ 'coc-html',
+  \ 'coc-css',
+  \ 'coc-json',
+  \ 'coc-svg',
+  \ 'coc-flow',
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
+  \ 'coc-explorer',
+  \ 'coc-vimtex',
+  \ 'coc-protobuf',
+  \ 'coc-rust-analyzer',
+  \ 'coc-perl',
+  \ 'coc-lua',
+  \ 'coc-julia',
+  \ 'coc-go',
+  \ 'coc-elixir',
+  \ 'coc-pyright',
+  \ 'coc-docker',
+  \ 'coc-cmake',
+  \ 'coc-emoji',
+  \ 'coc-markdownlint',
+  \ 'coc-sh',
+  \ 'coc-vimlsp',
+  \ 'coc-toml',
+  \ 'coc-yaml',
+  \ 'coc-xml',
+  \ 'coc-highlight'
+  \ ]
+
+" Setup prettier command
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
 " Keybindings
 """""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -73,7 +118,7 @@ nmap <leader>a <Plug>(coc-codeaction-selected)
 " Remap keys for applying codeAction to the current buffer
 nmap <leader>ac <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line
-nmap <leader>qf <Plug>(coc-fix-current)
+nmap <leader>af <Plug>(coc-fix-current)
 
 " Map function and class text objects.
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server
@@ -113,24 +158,27 @@ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport
 " Mappings for CoCList
 
 " Do default action for next item
-nnoremap <silent><nowait> <space>j :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <leader>j :<C-u>CocNext<CR>
 " Do default action for previous item
-nnoremap <silent><nowait> <space>k :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <leader>k :<C-u>CocPrev<CR>
 " Show top-level list of commands
-nnoremap <silent> <space>L :<C-u>CocFzfList<CR>
+nnoremap <silent> <leader>L :<C-u>CocFzfList<CR>
 " Show all diagnostics
-nnoremap <silent> <space>a :<C-u>CocFzfList diagnostics<CR>
-nnoremap <silent> <space>b :<C-u>CocFzfList diagnostics --current-buf<CR>
+nnoremap <silent> <leader>a :<C-u>CocFzfList diagnostics<CR>
+nnoremap <silent> <leader>b :<C-u>CocFzfList diagnostics --current-buf<CR>
 " Show commands
-nnoremap <silent> <space>c :<C-u>CocFzfList commands<CR>
+nnoremap <silent> <leader>c :<C-u>CocFzfList commands<CR>
 " Show location list
-nnoremap <silent> <space>l :<C-u>CocFzfList location<CR>
+nnoremap <silent> <leader>l :<C-u>CocFzfList location<CR>
 " Find symbol of current document
-nnoremap <silent> <space>o :<C-u>CocFzfList outline<CR>
+nnoremap <silent> <leader>o :<C-u>CocFzfList outline<CR>
 " Search workspace symbols
-nnoremap <silent> <space>e :<C-u>CocFzfList symbols<CR>
+nnoremap <silent> <leader>e :<C-u>CocFzfList symbols<CR>
 " Resume latest coc list
-nnoremap <silent> <space>p :<C-u>CocFzfListResume<CR>
+nnoremap <silent> <leader>p :<C-u>CocFzfListResume<CR>
+
+" Show coc explorer
+nnoremap <leader><tab> :CocCommand explorer<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Status line
@@ -142,45 +190,8 @@ nnoremap <silent> <space>p :<C-u>CocFzfListResume<CR>
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 """""""""""""""""""""""""""""""""""""""""""""""""
-" Extensions
+" Auto commands
 """""""""""""""""""""""""""""""""""""""""""""""""
-
-" Coc will install the missing extensions after coc.nvim service started
-let g:coc_global_extensions = [
-  \ 'coc-marketplace',
-  \ 'coc-git',
-  \ 'coc-gitignore',
-  \ 'coc-sql',
-  \ 'coc-snippets',
-  \ 'coc-prettier',
-  \ 'coc-emmet',
-  \ 'coc-html',
-  \ 'coc-css',
-  \ 'coc-json',
-  \ 'coc-svg',
-  \ 'coc-flow',
-  \ 'coc-tsserver',
-  \ 'coc-eslint',
-  \ 'coc-explorer',
-  \ 'coc-vimtex',
-  \ 'coc-protobuf',
-  \ 'coc-rust-analyzer',
-  \ 'coc-perl',
-  \ 'coc-lua',
-  \ 'coc-julia',
-  \ 'coc-go',
-  \ 'coc-elixir',
-  \ 'coc-pyright',
-  \ 'coc-docker',
-  \ 'coc-cmake',
-  \ 'coc-markdownlint',
-  \ 'coc-sh',
-  \ 'coc-vimlsp',
-  \ 'coc-toml',
-  \ 'coc-yaml',
-  \ 'coc-xml',
-  \ 'coc-highlight'
-  \ ]
 
 augroup coc
   au!
@@ -191,6 +202,3 @@ augroup coc
   " Update signature help on jump placeholder
   au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup END
-
-" Show coc explorer
-nn <leader>q :CocCommand explorer<CR>
