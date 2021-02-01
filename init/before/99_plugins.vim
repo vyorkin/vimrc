@@ -259,6 +259,12 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 " Provides syntax highlighting for the GNU Octave programming language
   Plug 'vim-scripts/octave.vim--'
 
+" Solidity
+  Plug 'tomlion/vim-solidity'
+
+" Vyper
+  Plug 'jacqueswww/vim-vyper'
+
 " Docker
   Plug 'honza/dockerfile.vim'
   Plug 'kevinhui/vim-docker-tools'

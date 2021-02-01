@@ -33,7 +33,6 @@ let g:coc_global_extensions = [
   \ 'coc-docker',
   \ 'coc-cmake',
   \ 'coc-emoji',
-  \ 'coc-markdownlint',
   \ 'coc-sh',
   \ 'coc-vimlsp',
   \ 'coc-toml',
@@ -41,6 +40,7 @@ let g:coc_global_extensions = [
   \ 'coc-xml',
   \ 'coc-highlight'
   \ ]
+" \ 'coc-markdownlint',
 
 " Setup prettier command
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
