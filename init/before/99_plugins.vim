@@ -280,10 +280,6 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 " Appearance
 """""""""""""""""""""""""""""""""""""""""""""""""
 
-" Adds file type icons to Vim plugins such as: NERDTree, vim-airline,
-" CtrlP, unite, Denite, lightline, vim-startify and many more
-  Plug 'ryanoasis/vim-devicons'
-
 " Clear and make transparent vim's background color in terminal
   Plug 'miyakogi/seiya.vim'
 
