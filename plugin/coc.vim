@@ -16,6 +16,7 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-svg',
   \ 'coc-flow',
+  \ 'coc-flutter',
   \ 'coc-tsserver',
   \ 'coc-eslint',
   \ 'coc-stylelint',

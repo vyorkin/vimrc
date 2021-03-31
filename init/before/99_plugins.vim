@@ -106,6 +106,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'scrooloose/syntastic'
 " Additional Syntastic syntax checkers and features
   Plug 'myint/syntastic-extras'
+" Syntastic plugin for solhint: linting utility for Solidity code
+  Plug 'sohkai/syntastic-local-solhint'
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Tags
@@ -218,7 +220,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-salve'
 
 " Cxx
-Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+" Provides C/C++/Cuda/ObjC semantic highlighting using the language server protocol
+  Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 " Haskell
 
@@ -258,6 +262,9 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 " Provides syntax highlighting for the GNU Octave programming language
   Plug 'vim-scripts/octave.vim--'
+
+" Dart
+  Plug 'dart-lang/dart-vim-plugin'
 
 " Solidity
   Plug 'tomlion/vim-solidity'
