@@ -23,7 +23,7 @@ let g:coc_global_extensions = [
   \ 'coc-explorer',
   \ 'coc-vimtex',
   \ 'coc-protobuf',
-  \ 'coc-rust-analyzer',
+  " \ 'coc-rust-analyzer',
   \ 'coc-rls',
   \ 'coc-perl',
   \ 'coc-lua',
