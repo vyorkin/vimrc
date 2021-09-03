@@ -171,11 +171,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Languages
 """""""""""""""""""""""""""""""""""""""""""""""""
 
-" JSON
-
-" JSON browser optimized for speed and comfort
-  Plug 'brtastic/vim-jsonviewer'
-
 " Ruby
 
 " Vim's runtime files for ruby support.
