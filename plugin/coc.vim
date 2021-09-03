@@ -3,6 +3,10 @@
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 " Coc will install the missing extensions after coc.nvim service started
+"
+" Disabled extensions:
+" * coc-json - Slow syntax highlighting for large files
+"
 let g:coc_global_extensions = [
   \ 'coc-marketplace',
   \ 'coc-git',
@@ -13,7 +17,6 @@ let g:coc_global_extensions = [
   \ 'coc-emmet',
   \ 'coc-html',
   \ 'coc-css',
-  \ 'coc-json',
   \ 'coc-svg',
   \ 'coc-flow',
   \ 'coc-flutter',
