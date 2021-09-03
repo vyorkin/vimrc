@@ -174,7 +174,7 @@ call plug#begin('~/.config/nvim/plugged')
 " JSON
 
 " JSON browser optimized for speed and comfort
-  Plug "brtastic/vim-jsonviewer"
+  Plug 'brtastic/vim-jsonviewer'
 
 " Ruby
 
