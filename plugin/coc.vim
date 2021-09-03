@@ -26,7 +26,7 @@ let g:coc_global_extensions = [
   \ 'coc-explorer',
   \ 'coc-vimtex',
   \ 'coc-protobuf',
-  \ 'coc-rls',
+  \ 'coc-rust-analyzer',
   \ 'coc-perl',
   \ 'coc-lua',
   \ 'coc-julia',
