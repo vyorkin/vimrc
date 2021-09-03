@@ -158,7 +158,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'christoomey/vim-tmux-navigator'
 
 """""""""""""""""""""""""""""""""""""""""""""""""
-" Completion
+" CoC
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 " Intellisense engine for Vim8 & Neovim,
@@ -170,6 +170,11 @@ call plug#begin('~/.config/nvim/plugged')
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Languages
 """""""""""""""""""""""""""""""""""""""""""""""""
+
+" JSON
+
+" JSON browser optimized for speed and comfort
+  Plug "brtastic/vim-jsonviewer"
 
 " Ruby
 
