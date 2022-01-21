@@ -39,6 +39,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-dispatch'
 " A Vim plugin for Vim plugins
   Plug 'tpope/vim-scriptease'
+" Interface for tree-sitter.
+" Provides basic functionality based on it (such as highlighting)
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Text objects
@@ -294,11 +297,9 @@ call plug#begin('~/.config/nvim/plugged')
 " Writing
 """""""""""""""""""""""""""""""""""""""""""""""""
 
-" Distraction-free writing
-  Plug 'junegunn/goyo.vim'
-
-" Hyperfocus-writing (text dimming)
-  Plug 'junegunn/limelight.vim'
+" Distraction-free, hyperfocus, zen-mode
+  Plug 'folke/zen-mode.nvim'
+  Plug 'folke/twilight.nvim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Themes

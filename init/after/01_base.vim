@@ -3,7 +3,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 if &background=="dark"
-  colorscheme base16-black-metal
+  colorscheme gruvbox
 else
   colorscheme Tomorrow
 endif
