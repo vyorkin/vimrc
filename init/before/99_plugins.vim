@@ -270,7 +270,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'dart-lang/dart-vim-plugin'
 
 " Solidity
-  Plug 'tomlion/vim-solidity'
+  Plug 'TovarishFin/vim-solidity'
 
 " Vyper
   Plug 'jacqueswww/vim-vyper'
