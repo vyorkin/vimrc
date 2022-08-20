@@ -318,6 +318,7 @@ Plug 'geoffharcourt/one-dark.vim'
 Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'zanglg/nova.vim'
 Plug 'ajmwagar/vim-dues'
+Plug 'rafi/awesome-vim-colorschemes'
 
 " List ends here.
 " Plugins become visible to Vim after this call
