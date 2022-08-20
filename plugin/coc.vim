@@ -24,6 +24,8 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-stylelint',
   \ 'coc-explorer',
+  \ 'coc-solidity',
+  \ 'coc-cairo',
   \ 'coc-vimtex',
   \ 'coc-protobuf',
   \ 'coc-rust-analyzer',
