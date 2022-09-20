@@ -24,7 +24,6 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-stylelint',
   \ 'coc-explorer',
-  \ 'coc-solidity',
   \ 'coc-cairo',
   \ 'coc-vimtex',
   \ 'coc-protobuf',
@@ -46,6 +45,7 @@ let g:coc_global_extensions = [
   \ 'coc-highlight'
   \ ]
 " \ 'coc-markdownlint',
+" \ 'coc-solidity',
 
 " Setup prettier command
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -54,17 +54,25 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " Keybindings
 """""""""""""""""""""""""""""""""""""""""""""""""
 
-function! CheckBackSpace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-" Insert <tab> when previous text is space, refresh completion if not.
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1):
-      \ CheckBackSpace() ? "\<Tab>" :
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 
 " Use <c-space> to trigger completion
 if has('nvim')
@@ -72,17 +80,6 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
-
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent> <CR> <C-r>=<SID>coc_confirm()<CR>
-function! s:coc_confirm() abort
-  if pumvisible()
-    return coc#_select_confirm()
-  else
-    return "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-  endif
-endfunction
 
 " Use `[g` and `]g` to navigate diagnostics.
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
@@ -95,16 +92,14 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<CR>
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
     call CocActionAsync('doHover')
   else
-    execute '!' . &keywordprg . " " . expand('<cword>')
+    call feedkeys('K', 'in')
   endif
 endfunction
 
@@ -124,6 +119,11 @@ nmap <leader>a <Plug>(coc-codeaction-selected)
 nmap <leader>ac <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line
 nmap <leader>af <Plug>(coc-fix-current)
+" Run the Code Lens action on the current line.
+nmap <leader>al  <Plug>(coc-codelens-action)
+
+" You have to remap <cr> to make it confirms completion.
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 " Map function and class text objects.
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server
@@ -146,7 +146,7 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
-" Use CTRL-S for selections ranges.
+" Use CTRL-i for selections ranges.
 " Requires 'textDocument/selectionRange' support of language server
 nmap <silent> <C-i> <Plug>(coc-range-select)
 xmap <silent> <C-i> <Plug>(coc-range-select)
@@ -168,9 +168,6 @@ nnoremap <silent><nowait> <leader>j :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <leader>k :<C-u>CocPrev<CR>
 " Show top-level list of commands
 nnoremap <silent> <leader>L :<C-u>CocFzfList<CR>
-" Show all diagnostics
-nnoremap <silent> <leader>a :<C-u>CocFzfList diagnostics<CR>
-nnoremap <silent> <leader>b :<C-u>CocFzfList diagnostics --current-buf<CR>
 " Show commands
 nnoremap <silent> <leader>c :<C-u>CocFzfList commands<CR>
 " Show location list

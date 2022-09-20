@@ -40,8 +40,9 @@ call plug#begin('~/.config/nvim/plugged')
 " A Vim plugin for Vim plugins
   Plug 'tpope/vim-scriptease'
 " Interface for tree-sitter.
-" Provides basic functionality based on it (such as highlighting)
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+  Plug 'nvim-treesitter/nvim-treesitter'
+" Lightweight alternative to context.vim
+  Plug 'nvim-treesitter/nvim-treesitter-context'
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Text objects
